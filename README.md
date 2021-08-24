@@ -22,4 +22,7 @@ npm run dev
  - You can search a country by its name.
  - View more details of a single country by clicking on it flag.
  - Simple navigation using vue-router.
+
+ ![GitHub Logo](/assets/screenshot.pdf)
+Format: ![Alt Text](url)
 ```
