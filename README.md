@@ -22,5 +22,5 @@ npm run dev
  - You can search a country by its name.
  - View more details of a single country by clicking on it flag.
  - Simple navigation using vue-router.
-https://github.com/francis-mwas/vue-rest-countries/blob/main/src/assets/Capture.PNG
+## Access screenshots from assets directory for visual demo
 ```
