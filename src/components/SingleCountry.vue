@@ -22,11 +22,26 @@
           <li class="list-group-item">Sub Region: {{ country.subregion }}</li>
           <li class="list-group-item">Population: {{ country.population }}</li>
         </ul>
-        <div class="card-body">
-          <router-link to="/" exact class="navbar-brand"
-            >Back countries</router-link
-          >
-        </div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item active">
+          Some of the interesting things about {{ country.name }}
+        </li>
+        <p>It borders the following countries:</p>
+        <template v-for="(neighbour, index) in country.borders">
+          <li class="list-group-item" :key="index">{{ neighbour }}</li>
+        </template>
+      </ul>
+      <ul class="list-group">
+        <p>Do you know you can also spell {{ country.name }} as follows:</p>
+        <template v-for="(spelling, index) in country.altSpellings">
+          <li class="list-group-item" :key="index">{{ spelling }}</li>
+        </template>
+      </ul>
+      <div class="card-body">
+        <router-link to="/" exact class="navbar-brand"
+          >Back countries</router-link
+        >
       </div>
     </div>
   </section>
@@ -71,7 +86,8 @@ export default {
   font-size: 1.4rem;
   color: whitesmoke;
 }
-.card {
+.card,
+.list-group {
   width: 60% !important;
   margin: 0 auto;
 }
