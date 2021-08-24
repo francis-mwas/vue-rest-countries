@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      copyright: "All right reserved.2021 countries search app"
+      copyright: "All right reserved. 2021 countries search app"
     };
   }
 };
@@ -21,7 +21,7 @@ footer {
 }
 footer p {
   text-align: center;
-  font-size: 10px;
+  font-size: 1.1rem;
   color: whitesmoke;
 }
 </style>

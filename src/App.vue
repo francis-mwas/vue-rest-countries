@@ -1,16 +1,15 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark style-nav">
-      <router-link to="/" class="navbar-brand">Countries App</router-link>
-      <div class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <router-link to="/contries" class="nav-link">Countries</router-link>
-        </li>
-      </div>
+      <router-link to="/" exact class="navbar-brand">Countries App</router-link>
+      <div class="navbar-nav mr-auto"></div>
     </nav>
     <div>
-      <c-list />
+      <router-view v-bind:countries="countries" />
     </div>
+    <!-- <div>
+      <c-list v-bind:countries="countries" />
+    </div> -->
     <div>
       <app-footer />
     </div>
@@ -18,6 +17,7 @@
 </template>
 
 <script>
+import AppService from "./services/AppService";
 import CountriesList from "./components/CountriesList.vue";
 import Footer from "./components/Footer.vue";
 
@@ -28,7 +28,24 @@ export default {
   },
   name: "app",
   data() {
-    return {};
+    return {
+      countries: []
+    };
+  },
+  methods: {
+    getCountries() {
+      AppService.getAll()
+        .then(response => {
+          this.countries = response.data;
+          console.log("The countries: ", this.countries);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    }
+  },
+  mounted() {
+    this.getCountries();
   }
 };
 </script>

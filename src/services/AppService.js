@@ -2,7 +2,7 @@ import http from "../http-calls";
 
 class CountriesDataService {
   getAll() {
-    return http.get("/region/europe");
+    return http.get("/all");
   }
 
   findCountryByName(name) {
